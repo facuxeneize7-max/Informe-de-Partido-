@@ -14,7 +14,7 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 6mm;
+      margin: 5mm;
     }
     @media print {
       body { background: white !important; padding: 0 !important; margin: 0 !important; }
@@ -31,7 +31,7 @@
     }
     .sheet-border { border: 2px solid #111827; }
     .sheet-grid { border-collapse: collapse; width: 100%; }
-    .sheet-grid td, .sheet-grid th { border: 1.5px solid #111827; padding: 2px 4px; }
+    .sheet-grid td, .sheet-grid th { border: 1.5px solid #111827; padding: 2px 3px; }
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen font-sans text-gray-900 pb-6">
@@ -54,112 +54,117 @@
     </div>
   </header>
 
-  <main class="max-w-2xl mx-auto my-3 px-2">
-    <div class="print-container bg-white p-4 rounded-lg shadow-lg sheet-border">
+  <main class="max-w-2xl mx-auto my-2 px-2">
+    <div class="print-container bg-white p-3 rounded-lg shadow-lg sheet-border">
       
       <!-- ENCABEZADO A4 COMPACTO -->
-      <div class="flex justify-between items-center mb-2">
+      <div class="flex justify-between items-center mb-1.5">
         <!-- ESCUDO LIGA MERCEDES -->
-        <div class="w-16 h-16 flex items-center justify-center">
+        <div class="w-14 h-14 flex items-center justify-center">
           <img src="IMG_2073.jpeg" alt="Liga Mercedes" class="max-h-full max-w-full object-contain">
         </div>
 
         <!-- TÍTULO -->
         <div class="text-center">
-          <h1 class="text-lg font-black text-black tracking-wider border-b-2 border-black pb-0.5 uppercase">
+          <h1 class="text-base font-black text-black tracking-wider border-b-2 border-black pb-0.5 uppercase">
             INFORME DEL PARTIDO
           </h1>
         </div>
 
         <!-- ESCUDO AFA -->
-        <div class="w-16 h-16 flex items-center justify-center">
+        <div class="w-14 h-14 flex items-center justify-center">
           <img src="https://svgshare.com/i/185g.svg" onerror="this.onerror=null; this.src='IMG_2072.webp';" alt="AFA Logo" class="max-h-full max-w-full object-contain">
         </div>
       </div>
 
       <!-- EQUIPOS LOCAL VS VISITANTE -->
-      <div class="grid grid-cols-12 gap-2 items-center mb-2">
+      <div class="grid grid-cols-12 gap-2 items-center mb-1.5">
         <div class="col-span-5">
-          <input type="text" placeholder="EQUIPO LOCAL" class="w-full border-2 border-black p-1 text-center font-extrabold text-sm uppercase rounded">
+          <input type="text" placeholder="EQUIPO LOCAL" class="w-full border-2 border-black p-0.5 text-center font-extrabold text-xs uppercase rounded">
         </div>
         <div class="col-span-2 text-center">
-          <span class="text-base font-black text-black">VS</span>
+          <span class="text-sm font-black text-black">VS</span>
         </div>
         <div class="col-span-5">
-          <input type="text" placeholder="EQUIPO VISITANTE" class="w-full border-2 border-black p-1 text-center font-extrabold text-sm uppercase rounded">
+          <input type="text" placeholder="EQUIPO VISITANTE" class="w-full border-2 border-black p-0.5 text-center font-extrabold text-xs uppercase rounded">
         </div>
       </div>
 
       <!-- RESULTADO FINAL -->
-      <div class="mb-3 flex items-center border-2 border-black p-1 rounded bg-gray-50">
+      <div class="mb-2 flex items-center border-2 border-black p-0.5 rounded bg-gray-50">
         <label class="font-bold text-xs text-black whitespace-nowrap mr-2">Resultado final:</label>
         <input type="text" placeholder="Ej: 2 - 1" class="w-full font-bold text-xs text-black bg-transparent focus:outline-none">
       </div>
 
-      <!-- 1. GOLES (ARRIBA DE TODO - 8 RENGLONES CON FORMATO AUTOMÁTICO) -->
+      <!-- 1. GOLES (7 RENGLONES) -->
       <div class="mb-2">
-        <h2 class="text-center font-extrabold text-black text-xs border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Goles</h2>
+        <h2 class="text-center font-extrabold text-black text-[11px] border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Goles</h2>
         <table class="sheet-grid">
           <thead><tr class="bg-gray-100 text-[10px] font-bold"><th class="w-1/2">LOCAL</th><th class="w-1/2">VISITANTE</th></tr></thead>
           <tbody>
             <tr>
-              <td><textarea rows="8" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-              <td><textarea rows="8" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              <td><textarea rows="7" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              <td><textarea rows="7" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- 2. AMONESTADOS (8 RENGLONES CON FORMATO AUTOMÁTICO) -->
+      <!-- AMONESTADOS Y EXPULSADOS LADO A LADO -->
+      <div class="grid grid-cols-2 gap-2 mb-2">
+        
+        <!-- 2. AMONESTADOS (6 RENGLONES) -->
+        <div>
+          <h2 class="text-center font-extrabold text-black text-[11px] border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Amonestados</h2>
+          <table class="sheet-grid">
+            <thead><tr class="bg-gray-100 text-[9px] font-bold"><th class="w-1/2">LOC</th><th class="w-1/2">VIS</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+                <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 3. EXPULSADOS (5 RENGLONES) -->
+        <div>
+          <h2 class="text-center font-extrabold text-black text-[11px] border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Expulsados</h2>
+          <table class="sheet-grid">
+            <thead><tr class="bg-gray-100 text-[9px] font-bold"><th class="w-1/2">LOC</th><th class="w-1/2">VIS</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><textarea rows="5" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+                <td><textarea rows="5" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 4. CAMBIOS REALIZADOS (5 RENGLONES) -->
       <div class="mb-2">
-        <h2 class="text-center font-extrabold text-black text-xs border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Amonestados</h2>
+        <h2 class="text-center font-extrabold text-black text-[11px] border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Cambios Realizados</h2>
         <table class="sheet-grid">
           <thead><tr class="bg-gray-100 text-[10px] font-bold"><th class="w-1/2">LOCAL</th><th class="w-1/2">VISITANTE</th></tr></thead>
           <tbody>
             <tr>
-              <td><textarea rows="8" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-              <td><textarea rows="8" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              <td><textarea rows="5" onkeydown="handleAutoPrefix(event, 'cambio')" oninput="autoExpand(this)" placeholder="Presione para agregar cambio..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              <td><textarea rows="5" onkeydown="handleAutoPrefix(event, 'cambio')" oninput="autoExpand(this)" placeholder="Presione para agregar cambio..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- 3. EXPULSADOS (8 RENGLONES CON FORMATO AUTOMÁTICO) -->
-      <div class="mb-2">
-        <h2 class="text-center font-extrabold text-black text-xs border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Expulsados</h2>
-        <table class="sheet-grid">
-          <thead><tr class="bg-gray-100 text-[10px] font-bold"><th class="w-1/2">LOCAL</th><th class="w-1/2">VISITANTE</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><textarea rows="8" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-              <td><textarea rows="8" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 4. CAMBIOS REALIZADOS (6 RENGLONES CON FORMATO CAMBIO AUTOMÁTICO) -->
-      <div class="mb-3">
-        <h2 class="text-center font-extrabold text-black text-xs border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Cambios Realizados</h2>
-        <table class="sheet-grid">
-          <thead><tr class="bg-gray-100 text-[10px] font-bold"><th class="w-1/2">LOCAL</th><th class="w-1/2">VISITANTE</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'cambio')" oninput="autoExpand(this)" placeholder="Presione para agregar cambio..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-              <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'cambio')" oninput="autoExpand(this)" placeholder="Presione para agregar cambio..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 5. INCIDENCIAS (12 RENGLONES) -->
-      <div class="mb-3 border-2 border-black p-1.5 rounded">
-        <label class="block font-extrabold text-black text-xs mb-0.5 uppercase">Incidencias:</label>
-        <textarea rows="12" oninput="autoExpand(this)" placeholder="Observaciones..." class="w-full text-xs p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea>
+      <!-- 5. INCIDENCIAS (10 RENGLONES) -->
+      <div class="mb-2 border-2 border-black p-1 rounded">
+        <label class="block font-extrabold text-black text-[11px] mb-0.5 uppercase">Incidencias:</label>
+        <textarea rows="10" oninput="autoExpand(this)" placeholder="Observaciones..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea>
       </div>
 
       <!-- TERNA ARBITRAL -->
-      <div class="space-y-1.5 pt-1 text-xs">
+      <div class="space-y-1 pt-0.5 text-xs">
         <div class="flex items-center">
           <span class="font-extrabold text-black w-24 uppercase">Árbitro:</span>
           <input type="text" class="flex-grow border-b-2 border-black pb-0.5 focus:outline-none">
@@ -187,7 +192,6 @@
       const el = event.target;
       const prefix = type === 'numero' ? 'N° ' : 'Sale N°  - Entra N°  ( \' )';
       
-      // Si la celda está vacía al presionar cualquier tecla (salvo teclas de control)
       if (el.value === '' && event.key.length === 1) {
         event.preventDefault();
         el.value = prefix + (type === 'numero' ? event.key : '');
@@ -195,7 +199,6 @@
         return;
       }
 
-      // Si se presiona la tecla Enter
       if (event.key === 'Enter') {
         event.preventDefault();
         const start = el.selectionStart;
