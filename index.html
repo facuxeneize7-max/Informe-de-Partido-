@@ -96,15 +96,15 @@
         <input type="text" placeholder="Ej: 2 - 1" class="w-full font-bold text-xs text-black bg-transparent focus:outline-none">
       </div>
 
-      <!-- 1. GOLES (7 RENGLONES) -->
+      <!-- 1. GOLES (6 RENGLONES) -->
       <div class="mb-2">
         <h2 class="text-center font-extrabold text-black text-[11px] border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Goles</h2>
         <table class="sheet-grid">
           <thead><tr class="bg-gray-100 text-[10px] font-bold"><th class="w-1/2">LOCAL</th><th class="w-1/2">VISITANTE</th></tr></thead>
           <tbody>
             <tr>
-              <td><textarea rows="7" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-              <td><textarea rows="7" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+              <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="Escriba para formatear..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
             </tr>
           </tbody>
         </table>
@@ -127,15 +127,15 @@
           </table>
         </div>
 
-        <!-- 3. EXPULSADOS (5 RENGLONES) -->
+        <!-- 3. EXPULSADOS (6 RENGLONES) -->
         <div>
           <h2 class="text-center font-extrabold text-black text-[11px] border-t-2 border-x-2 border-black bg-gray-200 py-0.5 uppercase">Expulsados</h2>
           <table class="sheet-grid">
             <thead><tr class="bg-gray-100 text-[9px] font-bold"><th class="w-1/2">LOC</th><th class="w-1/2">VIS</th></tr></thead>
             <tbody>
               <tr>
-                <td><textarea rows="5" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
-                <td><textarea rows="5" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+                <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
+                <td><textarea rows="6" onkeydown="handleAutoPrefix(event, 'numero')" oninput="autoExpand(this)" placeholder="N°" class="w-full text-[10px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea></td>
               </tr>
             </tbody>
           </table>
@@ -157,10 +157,10 @@
         </table>
       </div>
 
-      <!-- 5. INCIDENCIAS (10 RENGLONES) -->
+      <!-- 5. INCIDENCIAS (8 RENGLONES) -->
       <div class="mb-2 border-2 border-black p-1 rounded">
         <label class="block font-extrabold text-black text-[11px] mb-0.5 uppercase">Incidencias:</label>
-        <textarea rows="10" oninput="autoExpand(this)" placeholder="Observaciones..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea>
+        <textarea rows="8" oninput="autoExpand(this)" placeholder="Observaciones..." class="w-full text-[11px] p-0.5 border-none focus:outline-none resize-none overflow-hidden"></textarea>
       </div>
 
       <!-- TERNA ARBITRAL -->
